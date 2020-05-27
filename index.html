@@ -10,12 +10,12 @@
         var map = L.mapquest.map('map', {
           center: [40.7128, -74.0059],
           layers: L.mapquest.tileLayer('map'),
-          zoom: 9
+          zoom: 13
         });
 
         L.mapquest.directions().route({
-          start: { street: '350 5th Ave', city: 'New York', state: 'NY', postalCode: '10118'},
-          end: { street: 'One Liberty Plaza', city: 'New York', state: 'NY', postalCode: '10006'}
+          start: '350 5th Ave, New York, NY 10118',
+          end: 'One Liberty Plaza, New York, NY 10006'
         });
       }
     </script>
