@@ -1,27 +1,32 @@
 <html>
   <head>
-    <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
-
-    <script type="text/javascript">
-      window.onload = function() {
-        L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
-
-        var map = L.mapquest.map('map', {
-          center: [40.7128, -74.0059],
-          layers: L.mapquest.tileLayer('map'),
-          zoom: 13
-        });
-
-        L.mapquest.directions().route({
-          start: '350 5th Ave, New York, NY 10118',
-          end: 'One Liberty Plaza, New York, NY 10006'
-        });
-      }
-    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/TripgoRouting.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="dist/TripgoRouting.js"></script>
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script src="lib/Polyline-encoded.js"></script>
   </head>
 
   <body style="border: 0; margin: 0;">
+    <script>
+      L.tripgoRouting.mapLayer.initialize();           
+</script>
     <div id="map" style="width: 100%; height: 530px;"></div>
+
+    <script>                  
+      let options ={
+          "mapId" : "map",
+          "googleTile": false,
+          "mapCenter" : {
+              "lat": 51.511011,
+              "lng": -0.125448
+          },
+         "floatPanel": true,
+        //  "tripgoApiKey": "your TripGo API key"
+      }
+      
+     L.tripgoRouting.mapLayer.initialize(options);
+ </script> 
   </body>
 </html>
