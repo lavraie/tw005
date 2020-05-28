@@ -53,10 +53,10 @@ var marker = L.marker([51.5, -0.09]).addTo(mymap);
         }]
   });
 
-  L.tileLayer(MQ.routing.routeLayer({
+  map.addLayer(MQ.routing.routeLayer({
       directions: dir,
       fitBounds: false
-  })).addTo(mymap);
+  }));
 
 </script>
     </body>
